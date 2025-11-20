@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Musa Maison · Mediterranean Boho</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Musa: diseños nacidos en el Mediterráneo, inspirados en tendencias europeas y creados para la world traveller con un estilo de vida moderno y sin esfuerzo." />
+
+  <style>
+    :root {
+      --bg-pink: #ffb7c5;     /* Candy Pink aprox */
+      --bg-light: #fff7f9;
+      --text-main: #2d2a2b;
+      --text-soft: #6f6568;
+      --accent: #e18aa5;
+      --border-soft: rgba(255, 255, 255, 0.6);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --shadow-soft: 0 18px 35px rgba(0,0,0,0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #ffe5ef 0%, var(--bg-pink) 40%, #f7b1c6 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 32px 20px 64px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: 1120px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,247,249,0.96));
+      border-radius: 32px;
+      box-shadow: var(--shadow-soft);
+      padding: 28px 22px 40px;
+      border: 1px solid var(--border-soft);
+      backdrop-filter: blur(20px);
+    }
+
+    @media (min-width: 768px) {
+      .shell {
+        padding: 40px 48px 56px;
+      }
+    }
+
+    /* HEADER / HERO */
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.9);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+      flex-shrink: 0;
+      background: #b03b63; /* de fondo por si el logo no carga */
+    }
+
+    .logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand {
+      font-family: "Didot", "Bodoni MT", "Georgia", serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+    }
+
+    .nav-pill {
+      font-size: 0.78rem;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--border-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+
+    .nav-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      gap: 26px;
+      align-items: center;
+    }
+
+    @media (min-width: 880px) {
+      .hero {
+        grid-template-columns: 1.1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    .hero-title {
+      font-family: "Didot", "Bodoni MT", "Georgia", serif;
+      font-size: clamp(2.2rem, 3vw + 1.6rem, 3rem);
+      line-height: 1.08;
+      margin-bottom: 10px;
+    }
+
+    .hero-sub {
+      font-size: 0.94rem;
+      color: var(--text-soft);
+      max-width: 36rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-sub span {
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .hero-bilingual {
+      font-size: 0.82rem;
+      padding: 12px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(0,0,0,0.04);
+      background: rgba(255,255,255,0.8);
+      margin-bottom: 22px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .hero-bilingual small {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.7rem;
+      color: var(--text-soft);
+    }
+
+    .hero-note {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      margin-top: 8px;
+    }
+
+    .hero-media {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 260px;
+      background: #fceaf0;
+      display: grid;
+      grid-template-columns: 1.25fr 0.9fr;
+      gap: 6px;
+      padding: 8px;
+    }
+
+    .hero-media-main,
+    .hero-media-side {
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-media-main img,
+    .hero-media-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-media-tag {
+      position: absolute;
+      bottom: 10px;
+      left: 12px;
+      background: rgba(255,255,255,0.9);
+      font-size: 0.7rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-soft);
+    }
+
+    .hero-media-tag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero-media-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(0,0,0,0.52);
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 6px 9px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+    }
+
+    @media (max-width: 540px) {
+      .hero-media {
+        grid-template-columns: 1fr;
+      }
+      .hero-media-side {
+        display: none;
+      }
+    }
+
+    /* SECTIONS */
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+    }
+
+    .section-title {
+      font-family: "Didot", "Bodoni MT", "Georgia", serif;
+      font-size: 1.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      max-width: 28rem;
+    }
+
+    /* PILL FEATURES */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+    }
+
+    .feature {
+      padding: 14px 16px 16px;
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(0,0,0,0.03);
+      font-size: 0.82rem;
+    }
+
+    .feature-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* GALLERY */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .gallery-item {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fdf4f7;
+      position: relative;
+      min-height: 220px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 220ms ease-out;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    .gallery-tag {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      border-radius: 999px;
+      padding: 5px 11px;
+      font-size: 0.74rem;
+    }
+
+    /* STORY */
+
+    .story {
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,0.9);
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(0,0,0,0.03);
+      font-size: 0.86rem;
+      display: grid;
+      gap: 10px;
+    }
+
+    .story strong {
+      font-weight: 600;
+    }
+
+    .story-columns {
+      display: grid;
+      gap: 8px 20px;
+    }
+
+    @media (min-width: 760px) {
+      .story-columns {
+        grid-template-columns: 1.1fr 1fr;
+      }
+    }
+
+    .story-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .story-badge {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: #fff;
+      color: var(--text-soft);
+    }
+
+    /* CONTACT / FOOTER */
+
+    .cta {
+      display: grid;
+      gap: 14px;
+      align-items: center;
+      border-radius: var(--radius-md);
+      padding: 18px 18px 16px;
+      background: linear-gradient(120deg, rgba(255,255,255,0.95), #ffe7f0);
+      border: 1px solid rgba(255,255,255,0.7);
+      margin-top: 24px;
+    }
+
+    @media (min-width: 720px) {
+      .cta {
+        grid-template-columns: 2.2fr 1.4fr;
+        gap: 20px;
+      }
+    }
+
+    .cta-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .cta-text {
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      max-width: 26rem;
+    }
+
+    .cta-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .input {
+      flex: 1 1 140px;
+      min-width: 0;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 9px 12px;
+      font-size: 0.84rem;
+      background: rgba(255,255,255,0.9);
+      outline: none;
+    }
+
+    .input:focus {
+      border-color: var(--accent);
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="shell">
+      <!-- NAV -->
+      <header class="nav">
+        <div class="nav-left">
+          <div class="logo-circle">
+            <img src="logo.jpeg" alt="Logo Musa Maison" />
+          </div>
+          <div>
+            <div class="brand">Musa Maison</div>
+            <div class="tagline">Mediterranean boho · slow fashion</div>
+          </div>
+        </div>
+        <div class="nav-pill">
+          <span class="nav-pill-dot"></span>
+          Slow fashion · Limited drops
+        </div>
+      </header>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <h1 class="hero-title">Mediterranean cotton for the modern traveller.</h1>
+          <p class="hero-sub">
+            Dresses born on the Mediterranean coast, <span>inspired by European trends</span> and crafted for a modern, effortless lifestyle.
+          </p>
+
+          <div class="hero-bilingual">
+            <div>
+              <small>English</small>
+              <p>
+                Musa’s designs are born in the Mediterranean, inspired by European trends, and created for the world traveller with a modern, effortless lifestyle. Each piece embraces the principles of slow fashion—crafted in India with natural cottons and artisanal prints, and in Spain with the authentic boho spirit of the Mediterranean.
+              </p>
+            </div>
+            <div>
+              <small>Español</small>
+              <p>
+                Los diseños de Musa nacen en el Mediterráneo, se inspiran en las tendencias europeas y están creados para la world traveller con un estilo de vida moderno y sin esfuerzo. Cada pieza abraza los principios del slow fashion: elaborada en India con algodones naturales y estampados artesanales, y en España con el auténtico espíritu boho del Mediterráneo.
+              </p>
+            </div>
+          </div>
+
+          <p class="hero-note">
+            Producciones pequeñas, atemporales y versátiles. Perfectas para la playa, la ciudad y las escapadas de verano.
+          </p>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-media-main">
+            <img src="1.jpeg" alt="Vestido Musa Maison estilo boho blanco" />
+            <div class="hero-media-tag">
+              <span class="hero-media-tag-dot"></span>
+              Cotton sundress · Mediterranean light
+            </div>
+          </div>
+          <div class="hero-media-side">
+            <img src="2.jpeg" alt="Detalle de vestido Musa Maison" />
+            <div class="hero-media-badge">Summer drop</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="section" id="collection">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Colección cápsula</div>
+            <h2 class="section-title">Piezas ligeras, para maletas ligeras.</h2>
+          </div>
+          <p class="section-sub">
+            Diseños pensados para viajar contigo: ocupan poco espacio, combinan entre sí y se sienten bien sobre la piel.
+          </p>
+        </div>
+
+        <div class="features">
+          <article class="feature">
+            <div class="feature-label">Fibras</div>
+            <strong>Algodones naturales</strong>
+            Tejidos ligeros y transpirables que acompañan el movimiento. Ideales para climas cálidos junto al mar o en la ciudad.
+          </article>
+          <article class="feature">
+            <div class="feature-label">Hecho en</div>
+            <strong>India &amp; España</strong>
+            Confección en pequeños talleres en India y España, respetando tiempos de producción y técnicas artesanales.
+          </article>
+          <article class="feature">
+            <div class="feature-label">Filosofía</div>
+            <strong>Slow fashion</strong>
+            Series limitadas, sin temporadas rígidas. Diseños atemporales que puedes usar año tras año.
+          </article>
+          <article class="feature">
+            <div class="feature-label">Estilo</div>
+            <strong>Mediterranean boho</strong>
+            Siluetas relajadas, encajes sutiles y una paleta limpia que combina con sandalias, alpargatas o pies descalzos.
+          </article>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="section" id="gallery">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Gallery</div>
+            <h2 class="section-title">Escapes al sol.</h2>
+          </div>
+          <p class="section-sub">
+            Algunas de las piezas que viajarán contigo: desde la arena hasta una cena al atardecer.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="3.jpeg" alt="Vestido Musa con escote profundo y detalles de flecos" />
+            <figcaption class="gallery-tag">Sunset dress · Ibiza</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="5.jpeg" alt="Vestido largo blanco Musa en la playa" />
+            <figcaption class="gallery-tag">Barefoot on the beach</figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="4.jpeg" alt="Vestido corto boho Musa con vista al lago" />
+            <figcaption class="gallery-tag">Weekend getaway</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- STORY -->
+      <section class="section" id="story">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Story</div>
+            <h2 class="section-title">Una marca nómada con alma mediterránea.</h2>
+          </div>
+        </div>
+
+        <article class="story">
+          <div class="story-columns">
+            <p>
+              <strong>Musa</strong> nace en la costa mediterránea y se inspira en las mujeres que viajan ligero: una maleta pequeña, unos pocos vestidos y muchos planes. Cada pieza está pensada para acompañarte del desayuno frente al mar a una noche de verano bajo las luces de la ciudad.
+            </p>
+            <p>
+              Trabajamos con algodones naturales, estampados artesanales y acabados delicados. No perseguimos tendencias fugaces: diseñamos prendas que se sienten actuales hoy y dentro de diez años.
+            </p>
+          </div>
+
+          <div class="story-columns">
+            <p>
+              Desde India hasta España, colaboramos con talleres que comparten nuestra visión de <strong>slow fashion</strong>. Hacemos series limitadas, cuidando cada detalle y evitando sobreproducción.
+            </p>
+            <div>
+              <div class="story-badge-row">
+                <span class="story-badge">Hecho en India &amp; España</span>
+                <span class="story-badge">Algodón natural</span>
+                <span class="story-badge">Series limitadas</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- CTA / CONTACT -->
+      <section class="section" id="contact">
+        <footer class="footer">
+          <span>© <span id="year"></span> Musa Maison · Mediterranean boho wear</span>
+          <div class="footer-links">
+            <a href="#collection">Colección</a>
+            <a href="#gallery">Galería</a>
+            <a href="#contact">Contacto</a>
+          </div>
+        </footer>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Año automático en el footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
