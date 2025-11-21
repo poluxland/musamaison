@@ -5,6 +5,11 @@
   <title>Musa Maison · Mediterranean Boho</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Musa: diseños nacidos en el Mediterráneo, inspirados en tendencias europeas y creados para la world traveller con un estilo de vida moderno y sin esfuerzo." />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
   <style>
     :root {
@@ -479,6 +484,59 @@
       text-decoration-thickness: 1px;
       text-underline-offset: 3px;
     }
+
+    .whatsapp-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 62px;
+  height: 62px;
+  z-index: 9999;
+  border-radius: 999px;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 2px solid rgba(255,255,255,0.85);
+}
+
+.whatsapp-button img {
+  width: 34px;
+  height: 34px;
+  filter: none; /* antes invertía colores */
+}
+
+
+.whatsapp-button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+}
+
+.contact-pill {
+  margin-top: 16px;
+  display: inline-block;
+}
+
+.contact-pill a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.05);
+  font-size: 0.86rem;
+  color: var(--text-main);
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+}
+.footer-email a {
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
   </style>
 </head>
 
@@ -544,6 +602,10 @@
           </div>
         </div>
       </section>
+      <div class="contact-pill">
+  <a href="mailto:musa@musamaison.com">✉️ musa@musamaison.com</a>
+</div>
+
 
       <!-- FEATURES -->
       <section class="section" id="collection">
@@ -650,10 +712,12 @@
         <footer class="footer">
           <span>© <span id="year"></span> Musa Maison · Mediterranean boho wear</span>
           <div class="footer-links">
-            <a href="#collection">Colección</a>
-            <a href="#gallery">Galería</a>
-            <a href="#contact">Contacto</a>
+           
           </div>
+          <div class="footer-email">
+  <a href="mailto:musa@musamaison.com">musa@musamaison.com</a>
+</div>
+
         </footer>
       </section>
     </div>
@@ -663,5 +727,11 @@
     // Año automático en el footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <a href="https://wa.me/56977415015" class="whatsapp-button" target="_blank" aria-label="WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" />
+</a>
+
+
 </body>
 </html>
